@@ -9,7 +9,12 @@ var currentword="";
 var rguess=0;
 var winn=0;
 var losses=0;
-
+function playsound()
+{
+    var audioElement = document.createElement("audio");
+    audioElement.setAttribute("src", "Assets/Mousclik.wav");
+    audioElement.play();
+}
 
 function startnewgame()
 {
@@ -89,7 +94,7 @@ function mygame(dd,mysrtring)
 }
 
 document.onkeyup = function(event) {
-
+playsound();
 if(mygame(event.key,currentword) != undefined )
 {
    // alert(event.key+" "+ mygame(event.key,words[0]));
